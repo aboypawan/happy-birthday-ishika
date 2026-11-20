@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Ishika 🎂</title>
+  <meta name="description" content="Ishika ke liye ek natkhat birthday surprise!" />
+  <meta name="theme-color" content="#ffd400" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="floaters" id="floaters" aria-hidden="true"></div>
+  <div class="balloons" id="balloons" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#home" class="logo">Ishika<span>!</span></a>
+    <nav>
+      <a href="#gift">Gift</a>
+      <a href="#cake">Cake</a>
+      <a href="#wishes">Wishes</a>
+    </nav>
+    <button id="musicBtn" class="chip" aria-label="Music on/off">🔇 Music</button>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="badge wobble" id="tagline"></div>
+    <div class="avatar" id="avatar"><span>👧</span></div>
+    <h1 class="title">
+      <span class="t1">HAPPY</span>
+      <span class="t2">BIRTHDAY</span>
+      <span class="t3" id="nameBig">Ishika</span>
+    </h1>
+    <p class="sub" id="heroLine"></p>
+
+    <div class="btnrow">
+      <a href="#gift" class="btn red">🎁 Surprise Dekho</a>
+      <button class="btn blue" id="partyBtn">🎉 Party Time!</button>
+    </div>
+  </section>
+
+  <!-- SHARARAT GIFT -->
+  <section id="gift" class="panel">
+    <h2>Shararati Gift 🎁</h2>
+    <p class="hint">Niche wala button pakad ke dikhao... agar pakad paayi toh! 😏</p>
+    <div class="arena" id="arena">
+      <button class="btn green runaway" id="runBtn">Mujhe pakdo! 🏃</button>
+      <div class="taunt" id="taunt"></div>
+    </div>
+  </section>
+
+  <!-- CAKE -->
+  <section id="cake" class="panel">
+    <h2>Virtual Cake 🎂</h2>
+    <p class="hint">Mic allow karke <b>phoonk maaro</b> 💨 ya candles pe <b>tap</b> karo!</p>
+    <div class="cakewrap">
+      <svg id="cakeSvg" viewBox="0 0 320 300" role="img" aria-label="Birthday cake">
+        <ellipse cx="160" cy="272" rx="140" ry="16" fill="#000" opacity=".15"/>
+        <ellipse cx="160" cy="262" rx="140" ry="18" fill="#fff" stroke="#111" stroke-width="5"/>
+        <!-- bottom tier -->
+        <path d="M45 200 v50 a115 16 0 0 0 230 0 v-50z" fill="#ff5a8a" stroke="#111" stroke-width="5"/>
+        <ellipse cx="160" cy="200" rx="115" ry="18" fill="#ff8fb1" stroke="#111" stroke-width="5"/>
+        <path d="M45 200 q10 28 22 0 q10 34 24 0 q10 26 22 0 q12 36 26 0 q10 28 24 0 q12 32 24 0 q10 26 22 0 q10 30 20 0 v8 h-184z" fill="#fff" opacity="0"/>
+        <!-- top tier -->
+        <path d="M85 150 v50 a75 12 0 0 0 150 0 v-50z" fill="#ffd400" stroke="#111" stroke-width="5"/>
+        <ellipse cx="160" cy="150" rx="75" ry="13" fill="#fff3a0" stroke="#111" stroke-width="5"/>
+        <!-- drips -->
+        <path d="M86 152 q6 30 14 0 M118 160 q6 34 14 0 M158 163 q6 30 14 0 M196 160 q6 26 14 0 M222 152 q5 24 12 0" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+        <!-- sprinkles -->
+        <g stroke-width="5" stroke-linecap="round">
+          <path d="M70 225 l8 -4" stroke="#2b7bff"/><path d="M110 238 l8 4" stroke="#ffd400"/>
+          <path d="M160 230 l8 -4" stroke="#fff"/><path d="M205 240 l8 4" stroke="#2b7bff"/>
+          <path d="M245 224 l8 -4" stroke="#ffd400"/><path d="M135 215 l6 5" stroke="#fff"/>
+        </g>
+        <!-- candles -->
+        <g id="candles"></g>
+        <text x="160" y="195" text-anchor="middle" font-family="Bangers, cursive" font-size="26" fill="#fff" stroke="#111" stroke-width="1.5" paint-order="stroke">ISHIKA</text>
+      </svg>
+      <div class="btnrow">
+        <button class="btn red" id="blowBtn">💨 Phoonk Maaro</button>
+        <button class="btn blue" id="relightBtn">🔥 Dobara Jalao</button>
+      </div>
+      <p class="status" id="cakeStatus">Candles jal rahi hain... 🔥</p>
+    </div>
+  </section>
+
+  <!-- METER -->
+  <section class="panel">
+    <h2>Natkhat Meter 📊</h2>
+    <p class="hint">Ek dum official report card (100% sach!)</p>
+    <div class="meters" id="meters"></div>
+  </section>
+
+  <!-- WISHES -->
+  <section id="wishes" class="panel">
+    <h2>Wish Wall 💌</h2>
+    <p class="hint">Ishika ke liye apni wish chhodo!</p>
+    <form id="wishForm" class="wishform">
+      <input id="wName" maxlength="24" placeholder="Tumhara naam" required />
+      <textarea id="wMsg" maxlength="220" rows="3" placeholder="Ishika ke liye kuch natkhat sa likho..." required></textarea>
+      <div class="icons" id="icons"></div>
+      <button class="btn red" type="submit">Wish Bhejo 🚀</button>
+    </form>
+    <div class="wall" id="wall"></div>
+  </section>
+
+  <footer>Made with 💖 & thodi si shararat · Happy Birthday <span id="footName">Ishika</span> · 27 Dec</footer>
+
+  <!-- GIFT MODAL -->
+  <div class="modal" id="modal" hidden>
+    <div class="card pop">
+      <div class="bigemoji">🎁🎉</div>
+      <h3>Happy Birthday <span id="modalName"></span>!</h3>
+      <p id="giftText"></p>
+      <p class="sig" id="sig"></p>
+      <button class="btn red" id="closeModal">Thank You! 💖</button>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
